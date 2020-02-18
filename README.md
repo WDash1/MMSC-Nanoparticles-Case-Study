@@ -1,2 +1,2 @@
 # MMSC-Nanoparticles-Case-Study
-Source code for the Nanoparticles Case Study as part of the MMSC couse.
+This repository contains all the source code which has been developed for the Nanoparticles Mathematical Modelling Case Study, as part of the MMSC course.
