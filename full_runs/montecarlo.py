@@ -24,7 +24,14 @@ num = 10000
 R   = 1 + (np.sqrt(2) / 10) * erfinv(2 * np.random.rand(num) - 1)
 
 def dR_dt(R, t):
-    dRdt = (cinf0 - beta * np.sum((R0 * R)**3)/R.size - cs * np.exp(lcap / (R0 * R)))/(delta_C * (Da + R))
+    # Identifies particles which are less than 0.1 
+    ind     = R < 0.1
+    nind    = np.invert(ind)
+    N       = np.where(nind)[0].size
+    csolute = cinf0 - beta * np.sum(((R0 * R)[nind])**3) / N
+    dRdt    = (csolute - cs * np.exp(lcap / (R0 * R)))/(delta_C * (Da + R))
+    
+    dRdt[ind] = 0
     return dRdt
 
 N, R_bin = np.histogram(R, 50, density = True)
@@ -53,8 +60,9 @@ for T in np.arange(1, t_final):
         old_sol = sol[0][-1]
         # Reseting the message:
         sol[1]['message'] = '1'
-    
-    N, R_bin = np.histogram(old_sol, 50, density = True)
+
+    mod_sol  = old_sol[old_sol > 0.1]
+    N, R_bin = np.histogram(mod_sol, 50, density = True)
 
     h5f = h5py.File('montecarlo_data/%04d'%T + '.h5', 'w')
     h5f.create_dataset('R', data = (R_bin[1:] + R_bin[:-1])/2)
