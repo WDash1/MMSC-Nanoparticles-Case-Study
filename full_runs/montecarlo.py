@@ -14,18 +14,18 @@ k    = 7.97e-10
 N0   = 8.04e21
 R0   = 3e-9
 beta = 4 * np.pi * N0 / (3 * Vm)
-Da   = D/(k * R0)
 
-delta_C = cinf0 - cs * np.exp(lcap/R0)
-t0      = (R0**2 / (Vm * D * delta_C))
+Da      = 2 * D/(k * R0)
+delta_C = cinf0 - cs * np.exp(2 * lcap/R0)
+t0      = (R0**2 / (Vm * D * delta_C)) / 4
 
 # Number of particles that we are sampling:
 num = 10000
-R   = 1 + (np.sqrt(2) / 10) * erfinv(2 * np.random.rand(num) - 1)
+R   = 1 + (np.sqrt(2) / 14) * erfinv(2 * np.random.rand(num) - 1)
 
 def dR_dt(R, t):
-    # Identifies particles which are less than 0.1 
-    ind     = R < 0.1
+    # Identifies particles which are less than 0.5
+    ind     = R < 0.5
     nind    = np.invert(ind)
     N       = np.where(nind)[0].size
     csolute = cinf0 - beta * np.sum(((R0 * R)[nind])**3) / N
@@ -41,7 +41,7 @@ h5f.create_dataset('R', data = (R_bin[1:] + R_bin[:-1])/2)
 h5f.create_dataset('N', data = N)
 h5f.close()
 
-t_final = 200
+t_final = 1000
 for T in np.arange(1, t_final):
     print('Computing For Time =', T)
     N = 100
@@ -61,7 +61,7 @@ for T in np.arange(1, t_final):
         # Reseting the message:
         sol[1]['message'] = '1'
 
-    mod_sol  = old_sol[old_sol > 0.1]
+    mod_sol  = old_sol[old_sol > 0.5]
     N, R_bin = np.histogram(mod_sol, 50, density = True)
 
     h5f = h5py.File('montecarlo_data/%04d'%T + '.h5', 'w')
