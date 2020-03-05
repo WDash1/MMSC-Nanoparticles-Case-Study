@@ -4,13 +4,15 @@ from scipy.special import erfinv
 from scipy.integrate import solve_ivp
 import pylab as pl
 
-R   = 1 + (np.sqrt(2) / 14) * erfinv(2 * np.random.rand(num) - 1)
+R   = r_mean + sigma * np.sqrt(2) * erfinv(2 * np.random.rand(num) - 1)
 def dR_dt(t, R):
     # Identifies particles which are less than 0.5
     ind     = R < r_min
     nind    = np.invert(ind)
-    N       = np.where(nind)[0].size
-    csolute = cinf0 - beta * np.sum(((R0 * R)[nind])**3) / N
+    # N       = np.where(nind)[0].size
+    # if(num != N):
+    #    print(cinf0 + beta * np.sum(((R0 * R)[ind])**3) / (num - N))
+    csolute = cinf0 - beta * np.sum(((R0 * R)[nind])**3) / num
     dRdt    = (csolute - cs * np.exp(lcap / (R0 * R)))/(delta_C * (Da + R))
     
     dRdt[ind] = 0

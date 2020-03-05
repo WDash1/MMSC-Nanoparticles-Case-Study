@@ -2,7 +2,7 @@ from params import *
 from scipy.integrate import solve_ivp
 import h5py
 
-f0 = 14 * np.sqrt(0.5/np.pi) * np.exp(-196/2 * (r - 1)**2)
+f0 = np.sqrt(0.5/np.pi) / sigma * np.exp(-1/2 * ((r - 1)/sigma)**2)
 def minmod(x, y, z):
 
     min_of_all = np.minimum(np.minimum(abs(x), abs(y)), abs(z))
