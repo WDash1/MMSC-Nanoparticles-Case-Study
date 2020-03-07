@@ -111,7 +111,11 @@ class DataVisualiser:
     # @param output_fileapth    This parameter specifies the path of the image
     #                           file to which we wish to write the generated
     #                           graph image file to.    
-    def exportGraph(self, current_title, output_filepath):
+    # @param use_log_scale      This parameter should be a boolean that
+    #                           dictates whether the provided data is
+    #                           displayed on a logarithmic scale in the 
+    #                           resulting graph.
+    def exportGraph(self, current_title, output_filepath, use_log_scale):
         pylab.figure(self.figure_num);
         pylab.title(current_title);
         pylab.xlabel(self.x_label);
@@ -120,7 +124,11 @@ class DataVisualiser:
         pylab.ylim(self.y_lower_lim, self.y_upper_lim);
         
         for i in range (len(self.line_colours)):
-            pylab.plot(self.plot_data[i][0], self.plot_data[i][1], 'k--', 
+            if(use_log_scale==True):
+                pylab.semilogy(self.plot_data[i][0], self.plot_data[i][1], 'k--', 
+                    label = self.key_strings[i], color = self.line_colours[i]);
+            else:
+                pylab.plot(self.plot_data[i][0], self.plot_data[i][1], 'k--', 
                     label = self.key_strings[i], color = self.line_colours[i]);
         
         pylab.legend(fontsize = 10);
