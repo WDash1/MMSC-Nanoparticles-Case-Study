@@ -1,5 +1,9 @@
 import numpy as NP
 
+##  @brief  This file contains several functions required by the 
+#           PDEModelSimulatorvclass in order to simulate the PDE model 
+#           for our system of nanoparticles.
+
 def minmod(x, y, z):
 
     min_of_all = NP.minimum(NP.minimum(abs(x), abs(y)), abs(z))
