@@ -132,7 +132,7 @@ class DataVisualiser:
                     label = self.key_strings[i], color = self.line_colours[i]);
         
         pylab.legend(fontsize = 10);
-        pylab.savefig(output_filepath, bbox_inches = 'tight');
+        pylab.savefig(output_filepath, bbox_inches = 'tight', dpi=300);
         pylab.close(self.figure_num);
     
     
