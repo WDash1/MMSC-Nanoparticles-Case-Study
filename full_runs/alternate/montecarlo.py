@@ -2,9 +2,8 @@ from params import *
 import h5py
 from scipy.special import erfinv
 from scipy.integrate import solve_ivp
-import pylab as pl
 
-R   = r_mean + sigma * np.sqrt(2) * erfinv(2 * np.random.rand(num) - 1)
+R = r_mean + sigma * np.sqrt(2) * erfinv(2 * np.random.rand(num) - 1)
 def dR_dt(t, R):
     # Identifies particles which are less than 0.5
     ind     = R < r_min
