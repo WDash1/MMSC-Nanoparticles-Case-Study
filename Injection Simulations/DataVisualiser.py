@@ -136,7 +136,11 @@ class DataVisualiser:
                 pylab.plot(self.plot_data[i][0], self.plot_data[i][1], 'k--', 
                     label = self.key_strings[i], color = self.line_colours[i]);
         
+<<<<<<< HEAD
         pylab.legend(fontsize = self.label_font_size);
+=======
+        pylab.legend(fontsize = 10);
+>>>>>>> 61151f95a6eca733774f5213fc1532ea6ddd60ce
         pylab.savefig(output_filepath, bbox_inches = 'tight', dpi=300);
         pylab.close(self.figure_num);
     
