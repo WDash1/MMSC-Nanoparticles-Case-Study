@@ -30,7 +30,7 @@ n0 = lambda x: NP.sqrt(0.5/NP.pi) / sigma * NP.exp(-1/2 * ((x - 1)/sigma)**2);
 
 #The number of different injection functions that we wish to use in our
 #simualtions. This number should be a value between 0 and 6 (inclusive).
-number_of_functions = 11;
+number_of_functions = 6;
 
 
 #The directory that we wish to write the resulting graph images to.
@@ -52,17 +52,24 @@ def linearInjectionFunction(t, start_time, stop_time, min_value, max_value):
 
 #This array specifies the description strings in the legend for each line on
 #the output graphs.
+#line_key_strings = ["0",
+#                    "20",
+#                    "40",
+#                    "60",
+#                    "80",
+#                    "100",
+#                    "120",
+#                    "140",
+#                    "160",
+#                    "180",
+#                    "200"];
+ 
 line_key_strings = ["0",
-                    "100",
-                    "200",
-                    "300",
-                    "400",
-                    "500",
-                    "600",
-                    "700",
-                    "800",
-                    "900",
-                    "1000"];
+                    "40",
+                    "80",
+                    "120",
+                    "160",
+                    "200"];
 
 #This array specifies the colour of each line on the output graphs.
 line_colours = ["black",
@@ -81,7 +88,8 @@ line_colours = ["black",
 injection_start_time=2000;
 injection_stop_time=64000;
 
-injection_amounts=[0,100,200,300,400,500,600,700,800,900,1000];
+#injection_amounts=[0,20,40,60,80,100,120,140,160,180,200];
+injection_amounts=[0,40,80,120,160,200];
 
                 
 injection_functions = list(map(lambda injection_amount: lambda t:  linearInjectionFunction(t, injection_start_time, injection_stop_time,0,injection_amount), injection_amounts));
@@ -108,7 +116,7 @@ injection_functions = list(map(lambda injection_amount: lambda t:  linearInjecti
 simulation_environment = PDEModelSimulator( end_time, r_min, r_max, 
                                     l_cap, c_inf_0, cs, Vm, D, k, N0, R0)
                         
-time_values = simulation_environment.getTValues();
+time_values = simulation_environment.getTValues()/3600;
 r_values = simulation_environment.getRValues();
 
                        
@@ -123,8 +131,8 @@ solution_data = list(map(numerical_simulator,
 
 #Create a DataVisualiser object instance in order to export the numeric
 #results into graphical form.
-visualiser = DataVisualiser(1,   0.4 * R0/1e-9, 4.0 * R0/1e-9, 'Nanoparticle Radius (in nanometres)',
-                                 0, 12, 'N(r,t)', 
+visualiser = DataVisualiser(1,   0.4 * R0/1e-9, 8, 'r (in nm)',
+                                 0, 10, 'N(r,t)', 
                                  line_key_strings[0:number_of_functions],
                                  line_colours[0:number_of_functions]);
                           
@@ -163,25 +171,25 @@ for i in range(number_of_functions):
                         list(range(0,time_values.size))));
     
                         
-    mean_values[i] = list(map(lambda j: mean_calculator(solution_data[i][:,j]), 
+    mean_values[i] = list(map(lambda j: 1e9* mean_calculator(solution_data[i][:,j]), 
                         list(range(0,time_values.size))));
                
     max_means[i] = max(mean_values[i]);
     min_means[i] = min(mean_values[i]);           
                
-    variance_values[i] = list(map(lambda j: variance_calculator(solution_data[i][:,j]), 
+    variance_values[i] = list(map(lambda j: 1e18* variance_calculator(solution_data[i][:,j]), 
                         list(range(0,time_values.size))));
     max_vars[i] = max(variance_values[i]);
     min_vars[i] = min(variance_values[i]);
     
-mean_visualiser = DataVisualiser(1,   min(time_values), max(time_values), 'Time Since Nucleation (in seconds)',
-                                 min(min_means)*0.9, max(max_means)*1.1, 'Average Nanoparticle Radius (in nanometres)', 
+mean_visualiser = DataVisualiser(1,   min(time_values), max(time_values)*0.85, 't (in hours)',
+                                 min(min_means)*0.9, max(max_means)*1.5, 'Average r (in nm)', 
                                  line_key_strings[0:number_of_functions],
                                  line_colours[0:number_of_functions]);
                                  
                                  
-variance_visualiser = DataVisualiser(1,   min(time_values), max(time_values), 'Time Since Nucleation (in seconds)',
-                                 min(min_vars)*0.9, max(max_vars)*1.1, 'Variance of Nanoparticle Radius (in nanometres)', 
+variance_visualiser = DataVisualiser(1,   min(time_values), 0.85*max(time_values), 't (in hours)',
+                                 min(min_vars)*0.7, max(max_vars)*1.1, 'Variance of r (in nm$^2$)', 
                                  line_key_strings[0:number_of_functions],
                                  line_colours[0:number_of_functions]);
                    
@@ -202,12 +210,12 @@ variance_visualiser.clearData();
 
 
 average_visualiser = DataVisualiser(1, min(injection_amounts), max(injection_amounts) , 'Solute Injection',
-                                 0.4 * R0/1e-9, 4.0 * R0/1e-9, 'Average Nanoparticle Radius (in nanometres)', 
+                                 3, 6.5, 'Average r (in nm)', 
                                  ["Average"],
                                  ["black"]);
 
 variance_visualiser = DataVisualiser(1, min(injection_amounts), max(injection_amounts) , 'Solute Injection',
-                                 min(min_vars)*0.9, max(max_vars)*1.1, 'Nanoparticle Radius Variance', 
+                                 min(min_vars)*0.9, max(max_vars)*1.1, 'Variance of r (in nm$^2$)', 
                                  ["Variance"],
                                  ["black"]);
 
@@ -233,14 +241,14 @@ for i in range(time_values.size):
         
 
     average_visualiser.addData(injection_amounts, 1/1e-9*NP.array(mean_values), 0)
-    average_visualiser.exportGraph('Time Since Nucleation: %3.3f'%(time_values[i]) + ' seconds', average_output_folder+'/%04d'%i + '.png', False)
+    average_visualiser.exportGraph('Time: %3.3f'%(time_values[i]) + ' hours', average_output_folder+'/%04d'%i + '.png', False)
     average_visualiser.clearData();
     
     
 
 
-    variance_visualiser.addData(injection_amounts, NP.array(variance_values), 0)
-    variance_visualiser.exportGraph('Time Since Nucleation: %3.3f'%(time_values[i]) + ' seconds', variance_output_folder+'/%04d'%i + '.png', False)
+    variance_visualiser.addData(injection_amounts, 1e18*NP.array(variance_values), 0)
+    variance_visualiser.exportGraph('Time: %3.3f'%(time_values[i]) + ' hours', variance_output_folder+'/%04d'%i + '.png', False)
     variance_visualiser.clearData();
 
 
@@ -248,6 +256,6 @@ for i in range(time_values.size):
     print("Mean: "+str(mean_values));
     
 
-    visualiser.exportGraph('Time Since Nucleation: %3.3f'%(time_values[i]) + ' seconds', output_folder+'/%04d'%i + '.png', False);
+    visualiser.exportGraph('Time: %3.3f'%(time_values[i]) + ' hours', output_folder+'/%04d'%i + '.png', False);
     visualiser.clearData();
     

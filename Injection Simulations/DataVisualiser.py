@@ -71,6 +71,10 @@ class DataVisualiser:
         
         self.plot_data = numpy.empty(self.data_set_amount, dtype=object);
         
+        self.label_font_size=13;
+        self.title_font_size=self.label_font_size+5;
+        
+        
         
         
     ##  @brief              This method of the class may be used to add a set
@@ -117,9 +121,10 @@ class DataVisualiser:
     #                           resulting graph.
     def exportGraph(self, current_title, output_filepath, use_log_scale):
         pylab.figure(self.figure_num);
-        pylab.title(current_title);
-        pylab.xlabel(self.x_label);
-        pylab.ylabel(self.y_label);
+        pylab.title(current_title, fontsize=self.title_font_size);
+        pylab.xlabel(self.x_label, fontsize=self.label_font_size);
+        pylab.ylabel(self.y_label, fontsize=self.label_font_size);
+        pylab.tick_params(axis='both', which='major', labelsize=self.label_font_size);
         pylab.xlim(self.x_lower_lim, self.x_upper_lim);
         pylab.ylim(self.y_lower_lim, self.y_upper_lim);
         
@@ -131,7 +136,7 @@ class DataVisualiser:
                 pylab.plot(self.plot_data[i][0], self.plot_data[i][1], 'k--', 
                     label = self.key_strings[i], color = self.line_colours[i]);
         
-        pylab.legend(fontsize = 10);
+        pylab.legend(fontsize = self.label_font_size);
         pylab.savefig(output_filepath, bbox_inches = 'tight', dpi=300);
         pylab.close(self.figure_num);
     

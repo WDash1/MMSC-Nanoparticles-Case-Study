@@ -31,15 +31,17 @@ for i in range(t_eval.size):
     h5f.close()
 
     #pl.plot(R * R0/1e-9, np.sum(sol[3:-3]) * dr * N, label = 'Particle Model')
-    pl.plot(r * R0/1e-9, sol, 'b', label = 'Numerical Simultions');
+    pl.plot(r * R0/1e-9, sol, 'b', label = 'Numerical Simulation');
     #pl.plot(r * R0/1e-9, analytical_1(t_eval[i]), 'k-.', label = 'Travelling Wave Approximation');
-    pl.plot(r * R0/1e-9, analytical_2(t_eval[i]), 'r', label = r'$N_0(r) \exp{(\frac{\partial f}{\partial r}(r,t)t)}$');
+    pl.plot(r * R0/1e-9, analytical_2(t_eval[i]), 'r', label = r'Asymptotic Approximation');
     
-    pl.title('Time: %3.3f'%(t_eval[i] * t0/3600) + ' hours')
-    pl.xlabel(r'$r$ (in nanometers)')
-    pl.ylabel(r'$N(r,t)$')
+    pl.title('Time: %3.3f'%(t_eval[i] * t0/3600) + ' hours', fontsize=17)
+    pl.xlabel(r'r (in nm)', fontsize=11)
+    pl.ylabel(r'N(r,t)', fontsize=11)
     pl.xlim(0.4 * R0/1e-9, 2.5 * R0/1e-9)
-    pl.ylim(0, 6)
-    pl.legend(fontsize = 10)
-    pl.savefig('comparison_images/%04d'%i + '.png', bbox_inches = 'tight')
+    pl.ylim(0, 8)
+    pl.legend(fontsize = 11)
+    pl.tick_params(axis='both', which='major', labelsize=11);
+    pl.savefig('comparison_images/%04d'%i + '.png', bbox_inches = 'tight', dpi=300)
     pl.clf()
+
