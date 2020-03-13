@@ -1,4 +1,8 @@
 import numpy as NP
+
+import sys
+sys.path.append('../../')
+
 from DataVisualiser import DataVisualiser
 from PDEModelSimulator import PDEModelSimulator
 
@@ -29,8 +33,15 @@ n0 = lambda x: NP.sqrt(0.5/NP.pi) / sigma * NP.exp(-1/2 * ((x - 1)/sigma)**2);
 number_of_functions = 2;
 
 
+#The size of the fonts to be used for the axis and legend labels of the output
+#graphs.
+label_font_size = 13;
+
+#The size of the fonts to be used for the title of the output graphs.
+title_font_size = 17;
+
 #The directory that we wish to write the resulting graph images to.
-output_folder = "output_images/";
+output_folder = "Output_Images/";
 
 
 def injectionFunction1(t):
@@ -125,7 +136,8 @@ injection_functions = [injectionFunction1,
 simulation_environment = PDEModelSimulator( end_time, r_min, r_max, 
                                     l_cap, c_inf_0, cs, Vm, D, k, N0, R0)
                         
-time_values = simulation_environment.getTValues();
+#Retrieve the time and r values that will be used in the simulation.
+time_values = simulation_environment.getTValues()/3600;
 r_values = simulation_environment.getRValues();
 
                        
@@ -140,10 +152,12 @@ solution_data = list(map(numerical_simulator,
 
 #Create a DataVisualiser object instance in order to export the numeric
 #results into graphical form.
-visualiser = DataVisualiser(1,   0.4 * R0/1e-9, 2.5 * R0/1e-9, 'r(in nm)',
+visualiser = DataVisualiser(1,   0, 7, 'r(in nm)',
                                  0, 6, 'N(r,t)', 
                                  line_key_strings[0:number_of_functions],
-                                 line_colours[0:number_of_functions]);
+                                 line_colours[0:number_of_functions],
+                                 label_font_size,
+                                 title_font_size);
 
                             
                              
@@ -151,12 +165,12 @@ visualiser = DataVisualiser(1,   0.4 * R0/1e-9, 2.5 * R0/1e-9, 'r(in nm)',
 #each of the different injection functions and export them to an external
 #image file.
 for i in range(time_values.size):
-    print('Time =', time_values[i])
+    print('Processing iteration at time: ', time_values[i])
 
     for j in range(number_of_functions):
         current_N_data = solution_data[j][:,i];    
         visualiser.addData(1/1e-9*r_values, current_N_data, j);   
 
-    visualiser.exportGraph('Time = %3.3f'%(time_values[i]) + ' seconds', output_folder+'/%04d'%i + '.png');
+    visualiser.exportGraph('Time = %3.3f'%(time_values[i]) + ' hours', output_folder+'/%04d'%i + '.png', False);
     visualiser.clearData();
     
