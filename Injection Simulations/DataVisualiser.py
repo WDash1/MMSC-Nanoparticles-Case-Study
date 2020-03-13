@@ -66,7 +66,7 @@ class DataVisualiser:
                  x_lower_lim, x_upper_lim, x_label, 
                  y_lower_lim, y_upper_lim, y_label, 
                  key_strings, line_colours,
-                 label_font_size;
+                 label_font_size,
                  title_font_size):
 
         self.key_strings = key_strings;
@@ -146,7 +146,7 @@ class DataVisualiser:
         if(len(x_values)!=len(y_values)):
             raise Exception("The x_values and y_values arrays must be of \
                             the same length.");
-        if(index<0 || index>=self.data_set_amount)
+        if(index<0 or index>=self.data_set_amount):
             raise Exception("The index parameter must be an integer which is \
                             >=0 and <"+str(self.data_set_amount));
 
