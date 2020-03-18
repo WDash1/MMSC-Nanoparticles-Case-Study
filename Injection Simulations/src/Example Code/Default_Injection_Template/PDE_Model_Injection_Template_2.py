@@ -234,4 +234,4 @@ data_visualiser.exportMomentTimeGraph(3, 2, "3rd Moment Plot Title",
                                     
 #Produce plots of every distribution at all time steps in the simulation.
 data_visualiser.exportDistributionGraphAll("./Example_Distribution_Output_Images",
-                                           False, True, 0,0);
+                                           False, True, 0, 0, True, 0, 0);

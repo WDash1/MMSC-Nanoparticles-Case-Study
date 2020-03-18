@@ -187,7 +187,7 @@ data_visualiser = DistributionDataVisualiser("r (in nm)", "N(r,t)",
                          
 #Produce plots of every distribution at all time steps in the simulation.
 data_visualiser.exportDistributionGraphAll(output_folder,
-                                           False, True, 0,0);
+                                           False, True, 0, 0, True, 0, 0);
                 
 
                             
