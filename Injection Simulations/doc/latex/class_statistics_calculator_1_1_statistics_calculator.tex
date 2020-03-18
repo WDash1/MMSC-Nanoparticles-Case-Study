@@ -1,0 +1,131 @@
+\hypertarget{class_statistics_calculator_1_1_statistics_calculator}{
+\section{StatisticsCalculator::StatisticsCalculator Class Reference}
+\label{class_statistics_calculator_1_1_statistics_calculator}\index{StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}}
+}
+
+
+This class provides a method for calculating the mean, variance and arbitrary moments of a given distribution function.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_statistics_calculator_1_1_statistics_calculator_ab0c6137e7912f4ae798297af58b943c8}{\_\-\_\-init\_\-\_\-}
+\begin{DoxyCompactList}\small\item\em The constructor for this class. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_statistics_calculator_1_1_statistics_calculator_a188000e6ceba9bdb0a0e3205c71c3149}{noramliseData}
+\begin{DoxyCompactList}\small\item\em This method normalises a given distribution function so that its entries all sum to 1. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_statistics_calculator_1_1_statistics_calculator_a28a27db67f609d3d909b58c33900ba5e}{calculateMoment}
+\begin{DoxyCompactList}\small\item\em This method calculates a given moment associated with a specified list of probability values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_statistics_calculator_1_1_statistics_calculator_acfa437d9d93d9bc53d6d2ab4e8528b64}{calculateMean}
+\begin{DoxyCompactList}\small\item\em This method calculates the mean of the distribution encapsulated by this class, for a specified list of probability values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_statistics_calculator_1_1_statistics_calculator_a16b9a1a45d51262f9606661a042483ce}{calculateVariance}
+\begin{DoxyCompactList}\small\item\em This method calculates the variance of the distribution encapsulated by this class, for a specific list of probability values. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a method for calculating the mean, variance and arbitrary moments of a given distribution function. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_statistics_calculator_1_1_statistics_calculator_ab0c6137e7912f4ae798297af58b943c8}{
+\index{StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}!\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}}
+\index{\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}!StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}}
+\subsubsection[{\_\-\_\-init\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def StatisticsCalculator::StatisticsCalculator::\_\-\_\-init\_\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ x\_\-values}
+\end{DoxyParamCaption}
+)}}
+\label{class_statistics_calculator_1_1_statistics_calculator_ab0c6137e7912f4ae798297af58b943c8}
+
+
+The constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x\_\-values}]This parameter should be an array of doubles that corresponds to the x values associated with each of the probability weights given to the calculateMoment method of this class. \end{DoxyParams}
+\hypertarget{class_statistics_calculator_1_1_statistics_calculator_acfa437d9d93d9bc53d6d2ab4e8528b64}{
+\index{StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}!calculateMean@{calculateMean}}
+\index{calculateMean@{calculateMean}!StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}}
+\subsubsection[{calculateMean}]{\setlength{\rightskip}{0pt plus 5cm}def StatisticsCalculator::StatisticsCalculator::calculateMean (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ p\_\-values}
+\end{DoxyParamCaption}
+)}}
+\label{class_statistics_calculator_1_1_statistics_calculator_acfa437d9d93d9bc53d6d2ab4e8528b64}
+
+
+This method calculates the mean of the distribution encapsulated by this class, for a specified list of probability values. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-values}]This parameter must be an array of type double, which is the same length as the x\_\-values array given to the constructor of this class. The entries in this array should all be $>$=0 and correspond to the probability of each x value in the distribution occuring. It is important to note that if the entries in this array to not sum to 1, then this method will normalise the array by using the normaliseData method of this class. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method will return a value of type double that corresponds to the mean of the provided probability distribution. 
+\end{DoxyReturn}
+\hypertarget{class_statistics_calculator_1_1_statistics_calculator_a28a27db67f609d3d909b58c33900ba5e}{
+\index{StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}!calculateMoment@{calculateMoment}}
+\index{calculateMoment@{calculateMoment}!StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}}
+\subsubsection[{calculateMoment}]{\setlength{\rightskip}{0pt plus 5cm}def StatisticsCalculator::StatisticsCalculator::calculateMoment (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ p\_\-values, }
+\item[{}]{ moment\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{class_statistics_calculator_1_1_statistics_calculator_a28a27db67f609d3d909b58c33900ba5e}
+
+
+This method calculates a given moment associated with a specified list of probability values. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-values}]This parameter must be an array of type double, which is the same length as the x\_\-values array given to the constructor of this class. The entries in this array should all be $>$=0 and correspond to the probability of each x value in the distribution occuring. It is important to note that if the entries in this array to not sum to 1, then this method will normalise the array by using the normaliseData method of this class. \item[{\em moment\_\-number}]This parameter must be an integer which is strictly greater than zero, that dictates the moment number of the provided probability distribution that we wish to compute. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method will return a value of type double that corresponds to the designated moment of the provided probability distribution. 
+\end{DoxyReturn}
+\hypertarget{class_statistics_calculator_1_1_statistics_calculator_a16b9a1a45d51262f9606661a042483ce}{
+\index{StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}!calculateVariance@{calculateVariance}}
+\index{calculateVariance@{calculateVariance}!StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}}
+\subsubsection[{calculateVariance}]{\setlength{\rightskip}{0pt plus 5cm}def StatisticsCalculator::StatisticsCalculator::calculateVariance (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ p\_\-values}
+\end{DoxyParamCaption}
+)}}
+\label{class_statistics_calculator_1_1_statistics_calculator_a16b9a1a45d51262f9606661a042483ce}
+
+
+This method calculates the variance of the distribution encapsulated by this class, for a specific list of probability values. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-values}]This parameter must be an array of type double, which is the same length as the x\_\-values array given to the constructor of this class. The entries in this array should all be $>$=0 and correspond to the probability of each x value in the distribution occuring. It is important to note that if the entries in this array to not sum to 1, then this method will normalise the array by using the normaliseData method of this class. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method will return a value of type double that corresponds to the variance of the the provided probability distribution. 
+\end{DoxyReturn}
+\hypertarget{class_statistics_calculator_1_1_statistics_calculator_a188000e6ceba9bdb0a0e3205c71c3149}{
+\index{StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}!noramliseData@{noramliseData}}
+\index{noramliseData@{noramliseData}!StatisticsCalculator::StatisticsCalculator@{StatisticsCalculator::StatisticsCalculator}}
+\subsubsection[{noramliseData}]{\setlength{\rightskip}{0pt plus 5cm}def StatisticsCalculator::StatisticsCalculator::noramliseData (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ p\_\-values}
+\end{DoxyParamCaption}
+)}}
+\label{class_statistics_calculator_1_1_statistics_calculator_a188000e6ceba9bdb0a0e3205c71c3149}
+
+
+This method normalises a given distribution function so that its entries all sum to 1. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-values}]This parameter should be an array of doubles which are all $>$=0 and whose size is equal to that of the \char`\"{}x\_\-values\char`\"{} array given to the constructor of this class. This array corresponds to the probability values for our distribution that we wish to normalise. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns a numpy array, which contains scaled versions of each of the entries in the \char`\"{}p\_\-values\char`\"{} parameter, so that all the entries in the vector sum to 1. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Utilities/StatisticsCalculator.py\end{DoxyCompactItemize}

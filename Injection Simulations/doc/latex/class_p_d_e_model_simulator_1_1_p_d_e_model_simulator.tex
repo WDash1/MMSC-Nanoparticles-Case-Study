@@ -1,0 +1,111 @@
+\hypertarget{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator}{
+\section{PDEModelSimulator::PDEModelSimulator Class Reference}
+\label{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator}\index{PDEModelSimulator::PDEModelSimulator@{PDEModelSimulator::PDEModelSimulator}}
+}
+
+
+This class provides a way of initialising, running and retriving the corresponding output of numerical simulations of the PDE model for our system of nanoparticles.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_a9b7dbf0e8912852b309c38c70520e6d3}{\_\-\_\-init\_\-\_\-}
+\begin{DoxyCompactList}\small\item\em The constructor for this class. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_ab4ada5eadc3ef2e6b3c2b89d0c53a763}{simulateModel}
+\begin{DoxyCompactList}\small\item\em This method is responsible for executing a simulation of the PDE model using the settings given to the constructor and returning the numerical result. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_a1106df8f14189cc377e92aba14acf8ee}{getRValues}
+\begin{DoxyCompactList}\small\item\em This method can be used to retrieve the dimensionalised r values that our simulation mesh grid is comprised of. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_a5f6cd9ae1915ce5228fc462e95938476}{getTValues}
+\begin{DoxyCompactList}\small\item\em This method can be used to retrieved the the dimensionalised t values that our simulation mesh grid is comprised of. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a way of initialising, running and retriving the corresponding output of numerical simulations of the PDE model for our system of nanoparticles. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_a9b7dbf0e8912852b309c38c70520e6d3}{
+\index{PDEModelSimulator::PDEModelSimulator@{PDEModelSimulator::PDEModelSimulator}!\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}}
+\index{\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}!PDEModelSimulator::PDEModelSimulator@{PDEModelSimulator::PDEModelSimulator}}
+\subsubsection[{\_\-\_\-init\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def PDEModelSimulator::PDEModelSimulator::\_\-\_\-init\_\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ t\_\-final, }
+\item[{}]{ r\_\-min, }
+\item[{}]{ r\_\-max, }
+\item[{}]{ l\_\-cap, }
+\item[{}]{ c\_\-inf\_\-0, }
+\item[{}]{ cs, }
+\item[{}]{ Vm, }
+\item[{}]{ D, }
+\item[{}]{ k, }
+\item[{}]{ N0, }
+\item[{}]{ R0}
+\end{DoxyParamCaption}
+)}}
+\label{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_a9b7dbf0e8912852b309c38c70520e6d3}
+
+
+The constructor for this class. 
+
+This method is responsibleb for initialising all the necessary properties of this class in order for simultations of our model to be executed. However it is important to note that this method itself does compute any such simulations. 
+\begin{DoxyParams}{Parameters}
+\item[{\em t\_\-final}]This parameter must be a number of type double which is $>$0 and corresponds to the final (non-\/dimensionalised) time at which numerical simulations of our PDE model are terminated. \item[{\em r\_\-min}]This parameter must be a number of type double which corresponds to the theshold size at which nanoparticles are considered to have discolved back into the bulk solution. It is important to note that this parameter is relative to the initial nanoparticle size (denoted by the parameter \char`\"{}R0\char`\"{} ). In addition, it is important to note that this parameter must be strictly less than the parameter \char`\"{}r\_\-max\char`\"{}. \item[{\em r\_\-max}]This parameter must be a number of type double, which corresponds to the maximum size of particles that this simulation will consider. It is important to note that this parameter must be strictly greater than r\_\-min and must be sufficiently large so that no nanoparticles in the simulation every actually attain this value. In addition, it is important to note that this parameter is relative to the parameter \char`\"{}R0\char`\"{}. \item[{\em l\_\-cap}]This parameter must be a positive number of type double which corresponds to the capillarly length coefficient in our model. (For referance, this parameter should typically be of the order 10$^\wedge$-\/5). \item[{\em c\_\-inf\_\-0}]This parameter must be a positive number of type double that dictates the bulk concentraiton of the solute in the solution at time t=0. \item[{\em cs}]This parameter must be a positive number of type double which corresponds to the solubility of solute and is used in the Gibbs-\/Thompson equation. \item[{\em Vm}]This parameter must be a positive number of type double which dictates the molar volume (that is the volume occupied by 1 mol of the solute species). \item[{\em D}]This parameter must be a positive number of type double which corresponds to the diffusion coefficient associated with our solute species, when it is diffusion through our solution. \item[{\em k}]This parameter must be a positive number of type double which corresponds to the rate of reactivity of the chemcial reaction which is taking place on the surface of each of the nanoparticles. \item[{\em N0}]This parameter must be a positive number of type double which corresponds to the total volume of the bath in which the nanoparticle reaction process is taking place. \item[{\em R0}]This parameter must be a positive integer of type double that corresponds to the average initial size of the nanoparticles in our distribution at time t=0. This parameter is used in order to non-\/dimensionalise the lengthscale of our partial differential equation and should typically be of the order of 10$^\wedge$-\/9. \end{DoxyParams}
+\hypertarget{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_a1106df8f14189cc377e92aba14acf8ee}{
+\index{PDEModelSimulator::PDEModelSimulator@{PDEModelSimulator::PDEModelSimulator}!getRValues@{getRValues}}
+\index{getRValues@{getRValues}!PDEModelSimulator::PDEModelSimulator@{PDEModelSimulator::PDEModelSimulator}}
+\subsubsection[{getRValues}]{\setlength{\rightskip}{0pt plus 5cm}def PDEModelSimulator::PDEModelSimulator::getRValues (
+\begin{DoxyParamCaption}
+\item[{}]{ self}
+\end{DoxyParamCaption}
+)}}
+\label{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_a1106df8f14189cc377e92aba14acf8ee}
+
+
+This method can be used to retrieve the dimensionalised r values that our simulation mesh grid is comprised of. 
+
+\begin{DoxyReturn}{Returns}
+This method returns a one dimensional array of type double that is comprised on the ordered radius values used in the mesh of our domain for which numerical solutions have been produced by this class. 
+\end{DoxyReturn}
+\hypertarget{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_a5f6cd9ae1915ce5228fc462e95938476}{
+\index{PDEModelSimulator::PDEModelSimulator@{PDEModelSimulator::PDEModelSimulator}!getTValues@{getTValues}}
+\index{getTValues@{getTValues}!PDEModelSimulator::PDEModelSimulator@{PDEModelSimulator::PDEModelSimulator}}
+\subsubsection[{getTValues}]{\setlength{\rightskip}{0pt plus 5cm}def PDEModelSimulator::PDEModelSimulator::getTValues (
+\begin{DoxyParamCaption}
+\item[{}]{ self}
+\end{DoxyParamCaption}
+)}}
+\label{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_a5f6cd9ae1915ce5228fc462e95938476}
+
+
+This method can be used to retrieved the the dimensionalised t values that our simulation mesh grid is comprised of. 
+
+\begin{DoxyReturn}{Returns}
+This method returns a one dimensional array of type double that is comprosed of the time values used at each step of our numerical approximation of the solution of our PDE model. 
+\end{DoxyReturn}
+\hypertarget{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_ab4ada5eadc3ef2e6b3c2b89d0c53a763}{
+\index{PDEModelSimulator::PDEModelSimulator@{PDEModelSimulator::PDEModelSimulator}!simulateModel@{simulateModel}}
+\index{simulateModel@{simulateModel}!PDEModelSimulator::PDEModelSimulator@{PDEModelSimulator::PDEModelSimulator}}
+\subsubsection[{simulateModel}]{\setlength{\rightskip}{0pt plus 5cm}def PDEModelSimulator::PDEModelSimulator::simulateModel (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ n0, }
+\item[{}]{ injection\_\-function}
+\end{DoxyParamCaption}
+)}}
+\label{class_p_d_e_model_simulator_1_1_p_d_e_model_simulator_ab4ada5eadc3ef2e6b3c2b89d0c53a763}
+
+
+This method is responsible for executing a simulation of the PDE model using the settings given to the constructor and returning the numerical result. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em n0}]This parameter should be a function handle that corresponds to the initial distribution of particle sizes at time t=0. \item[{\em injection\_\-function}]This parameter should be a function handle that takes a dimensionalised time argument and returns a number of type double, which is strictly positive. This parameter corresponds to the amount of additional solute that has been externally added to the solution throughout the course of the simulation of the model. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns a two dimensional array of size AxB, where A corresponds to the amount of different r values used at each time step of the simulations of this method (and can be accessed via the getRValues method of this class) and B corresponds to the amount of different t values used for simulations of this method (and can be accessed via the getTValues method of this class). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Utilities/PDEModelSimulator.py\end{DoxyCompactItemize}

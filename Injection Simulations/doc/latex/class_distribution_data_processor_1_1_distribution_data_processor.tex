@@ -1,0 +1,333 @@
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor}{
+\section{DistributionDataProcessor::DistributionDataProcessor Class Reference}
+\label{class_distribution_data_processor_1_1_distribution_data_processor}\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+}
+
+
+This class is designed to provide the ability to manipulate and axtract useful information (e.g.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_a962229600d9585362c5be55f5d15f233}{\_\-\_\-init\_\-\_\-}
+\begin{DoxyCompactList}\small\item\em The constructor for this class. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_a92627f9df54bd7c1e2a6f5e92939c717}{addData}
+\begin{DoxyCompactList}\small\item\em This method may be used to add a set of results from a numerical simulation of the PDE nanoparticle model. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_ab439de520df4954c83acb1195a566756}{clearData}
+\begin{DoxyCompactList}\small\item\em This method removes all the data added to this object by using the addData method of this class. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_ae24b9219d16bfd69f327cbb7d49469d7}{calculateMeanValues}
+\begin{DoxyCompactList}\small\item\em This method calculates the average value of a specified distribution given to the constructor at each time step in the simulation and returns the resulting values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_acbaf028bc14b1ea34f29f650a1f4e387}{calculateMeanValuesAll}
+\begin{DoxyCompactList}\small\item\em This method calculates the average of each of the distributions encapsulated by this class at each time step in the simulation and returns the resulting values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_ab78b6628c9a09675d84a79f2a85ab62f}{calculateVarianceValues}
+\begin{DoxyCompactList}\small\item\em This method calculates the variance of a specified distribution given to the constructor at each time step in the simulation and returns the resulting values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_a8af920362a59782691c4710dcce1b83b}{calculateVarianceValuesAll}
+\begin{DoxyCompactList}\small\item\em This method calculates the variance of each of the distributions encapsulated by this class at each time step in the simulation and returns the resulting values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_a2bf48881db0e55f1c5867e41f76a27f9}{calculateMomentValues}
+\begin{DoxyCompactList}\small\item\em This method calculates the a designated moment of a specified distribution given to the constructor, at each time stepcin the simulation and returns the resulting values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_aaac7f2b110c8966483eb7e424d76d2c4}{calculateMomentValuesAll}
+\begin{DoxyCompactList}\small\item\em This method calculates the a specified moment of each of the distributions encapsulated by this class at each time step in the simulation and returns the resulting values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_ac5295ab18bec24e9da03dad11bd45352}{applyFunction}
+\begin{DoxyCompactList}\small\item\em This method applies a given function to a specified distribution given to the constructor, at each time step in the simulation and returns the resulting values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_a6215ea1385e09cad2781f0918d07e792}{applyFunctionToAll}
+\begin{DoxyCompactList}\small\item\em This method applied a designated function to each of the distributions encapsulated by this class at each time step in the simulation and returns the resulting values. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_ad02c165755e21331ea2988166c12319c}{getDistribution}
+\begin{DoxyCompactList}\small\item\em This method may be used to access a paticular distribution encapsulated by this class at a designated time step in the simulation. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_ae310e53613ab2830e7edaace7572fb7d}{getDistributionAll}
+\begin{DoxyCompactList}\small\item\em This method may be used to access each of the distributions encapsulated by this class at a specified time step in the simulation. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_a28fad03c7b80716d1e978a9d807c6d87}{getRValues}
+\begin{DoxyCompactList}\small\item\em This method is used to access the r\_\-values array given to the constructor of this class. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor_a26729ea141c5ddcb97ab11026bf4cefd}{getTValues}
+\begin{DoxyCompactList}\small\item\em This method is used to access the t\_\-values array given to the constructor of this class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is designed to provide the ability to manipulate and axtract useful information (e.g. mean and variance) from the data produced by a series of simulations of the nanoparticle PDE distribution model. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_a962229600d9585362c5be55f5d15f233}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}}
+\index{\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{\_\-\_\-init\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::\_\-\_\-init\_\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ r\_\-values, }
+\item[{}]{ t\_\-values, }
+\item[{}]{ data\_\-amount}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_a962229600d9585362c5be55f5d15f233}
+
+
+The constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em r\_\-values}]This parameter should be an array of type double that contains all the radius values used in the mesh grid for simulations of the PDE model. \item[{\em t\_\-values}]This parameter should be an array of type double that contains the time value for each of the time steps used in simulations of the PDE model. \item[{\em data\_\-amount}]This parameter should be an integer which is $>$0 and corresponds to the number of different different numerical simulations of our model that we wish to process in this object. (e.g. if we wish to compare two data sets one with solute injection and one without, then this value should be set to 2). \end{DoxyParams}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_a92627f9df54bd7c1e2a6f5e92939c717}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!addData@{addData}}
+\index{addData@{addData}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{addData}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::addData (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ N\_\-data, }
+\item[{}]{ index}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_a92627f9df54bd7c1e2a6f5e92939c717}
+
+
+This method may be used to add a set of results from a numerical simulation of the PDE nanoparticle model. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em N\_\-data}]This parameter must be an array of type double and size nxm, where n is equal to the length of the r\_\-values parameter given to the constructor of this class and m is equal to the length of the t\_\-values parameter given to the constructor of this class. Further the \mbox{[}i,j\mbox{]}th entry of this array should correspond to the value of the N distribution for a particle of size r\_\-values\mbox{[}i\mbox{]} at time t\_\-values\mbox{[}j\mbox{]}. \item[{\em index}]This parameter must be an integer which is $>$=0 and is strictly less than the data\_\-amount parameter given to the constructor of this class. This parameter corresponds to the index which we wish to use to referance the data given to this method. It is important to note that if the same index is used twice then the most recent call to this method will overwrite the data previously added using this index. \end{DoxyParams}
+\begin{DoxyNote}{Note}
+In order to remove all the data previously added to this object by invoking this method, please use the clearData method. 
+\end{DoxyNote}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_ac5295ab18bec24e9da03dad11bd45352}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!applyFunction@{applyFunction}}
+\index{applyFunction@{applyFunction}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{applyFunction}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::applyFunction (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ func, }
+\item[{}]{ index}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_ac5295ab18bec24e9da03dad11bd45352}
+
+
+This method applies a given function to a specified distribution given to the constructor, at each time step in the simulation and returns the resulting values. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em func}]This parameter must be a function handle which takes two arrays with the same length as the r\_\-values array given to the constructor and returns a value of type double. (The first argument given to this function is the value of the distirbution N at a particular time step and the second is the r\_\-values array that dictates the size of the nanoparticle for each entry in the N distribution array). \item[{\em index}]This parameter must be an integer which is $>$=0 and is strictly less than the data\_\-amount parameter given to the constructor of this class. This parameter corresponds to the index (used when adding data to this object via the addData method) of the distribution data to which we wish to apply the function func at each time step. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns an array of type double of the same size as the t\_\-values arrray given to the constructor of this class. Further, the ith entry of the aforementioned array corresponds to applying the function \char`\"{}func\char`\"{} to the simulation data stored at index \char`\"{}index\char`\"{} at time step t\_\-values\mbox{[}i\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_a6215ea1385e09cad2781f0918d07e792}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!applyFunctionToAll@{applyFunctionToAll}}
+\index{applyFunctionToAll@{applyFunctionToAll}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{applyFunctionToAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::applyFunctionToAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ func}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_a6215ea1385e09cad2781f0918d07e792}
+
+
+This method applied a designated function to each of the distributions encapsulated by this class at each time step in the simulation and returns the resulting values. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em func}]This parameter must be a function handle which takes two arrays with the same length as the r\_\-values array given to the constructor and returns a value of type double. (The first argument given to this function is the value of the distirbution N at a particular time step and the second is the r\_\-values array that dictates the size of the nanoparticle for each entry in the N distribution array). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns a two dimensional array of size nxm, where n is equal to the data\_\-amount parameter given to the constructor of this class and m is equal to the size of the t\_\-values array given to the constructor of this class. Further, the \mbox{[}i,j\mbox{]}th entry of the returned array corresponds to the result of the function \char`\"{}func\char`\"{} applied to the ith distribution (in accordance with the addData method) at time step t\_\-values\mbox{[}j\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_ae24b9219d16bfd69f327cbb7d49469d7}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!calculateMeanValues@{calculateMeanValues}}
+\index{calculateMeanValues@{calculateMeanValues}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{calculateMeanValues}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::calculateMeanValues (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ index}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_ae24b9219d16bfd69f327cbb7d49469d7}
+
+
+This method calculates the average value of a specified distribution given to the constructor at each time step in the simulation and returns the resulting values. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]This parameter must be an integer which is $>$=0 and is strictly less than the data\_\-amount parameter given to the constructor of this class. This parameter corresponds to the index (used when adding data to this object via the addData method) of the distribution data whose mean we wish to calculate. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns an array of type double of the same size as the t\_\-values arrray given to the constructor of this class. Further, the ith entry of the aforementioned array corresponds to the average of the simulation data stored at index \char`\"{}index\char`\"{} at time step t\_\-values\mbox{[}i\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_acbaf028bc14b1ea34f29f650a1f4e387}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!calculateMeanValuesAll@{calculateMeanValuesAll}}
+\index{calculateMeanValuesAll@{calculateMeanValuesAll}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{calculateMeanValuesAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::calculateMeanValuesAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_acbaf028bc14b1ea34f29f650a1f4e387}
+
+
+This method calculates the average of each of the distributions encapsulated by this class at each time step in the simulation and returns the resulting values. 
+
+\begin{DoxyReturn}{Returns}
+This method returns a two dimensional array of size nxm, where n is equal to the data\_\-amount parameter given to the constructor of this class and m is equal to the size of the t\_\-values array given to the constructor of this class. Further, the \mbox{[}i,j\mbox{]}th entry of the returned array corrsponds to the average of the ith distribution (in accordance with the addData method) at time step t\_\-values\mbox{[}j\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_a2bf48881db0e55f1c5867e41f76a27f9}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!calculateMomentValues@{calculateMomentValues}}
+\index{calculateMomentValues@{calculateMomentValues}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{calculateMomentValues}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::calculateMomentValues (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ moment\_\-number, }
+\item[{}]{ index}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_a2bf48881db0e55f1c5867e41f76a27f9}
+
+
+This method calculates the a designated moment of a specified distribution given to the constructor, at each time stepcin the simulation and returns the resulting values. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em moment\_\-number}]This parameter must be an integer which is $>$0 and dictates the moment number that we wish to calculate. \item[{\em index}]This parameter must be an integer which is $>$=0 and is strictly less than the data\_\-amount parameter given to the constructor of this class. This parameter corresponds to the index (used when adding data to this object via the addData method) of the distribution data whose moment we wish to calculate. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns an array of type double of the same size as the t\_\-values arrray given to the constructor of this class. Further, the ith entry of the aforementioned array corresponds to the variance of the simulation data stored at index \char`\"{}index\char`\"{} at time step t\_\-values\mbox{[}i\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_aaac7f2b110c8966483eb7e424d76d2c4}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!calculateMomentValuesAll@{calculateMomentValuesAll}}
+\index{calculateMomentValuesAll@{calculateMomentValuesAll}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{calculateMomentValuesAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::calculateMomentValuesAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ moment\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_aaac7f2b110c8966483eb7e424d76d2c4}
+
+
+This method calculates the a specified moment of each of the distributions encapsulated by this class at each time step in the simulation and returns the resulting values. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em moment\_\-number}]This parameter must be an integer which is $>$0 and corresponds to the moment number of the distributions that we wish to compute. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns a two dimensional array of size nxm, where n is equal to the data\_\-amount parameter given to the constructor of this class and m is equal to the size of the t\_\-values array given to the constructor of this class. Further, the \mbox{[}i,j\mbox{]}th entry of the returned array corrsponds to the specified moment of the ith distribution (in accordance with the addData method) at time step t\_\-values\mbox{[}j\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_ab78b6628c9a09675d84a79f2a85ab62f}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!calculateVarianceValues@{calculateVarianceValues}}
+\index{calculateVarianceValues@{calculateVarianceValues}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{calculateVarianceValues}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::calculateVarianceValues (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ index}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_ab78b6628c9a09675d84a79f2a85ab62f}
+
+
+This method calculates the variance of a specified distribution given to the constructor at each time step in the simulation and returns the resulting values. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]This parameter must be an integer which is $>$=0 and is strictly less than the data\_\-amount parameter given to the constructor of this class. This parameter corresponds to the index (used when adding data to this object via the addData method) of the distribution data whose variance we wish to calculate. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns an array of type double of the same size as the t\_\-values arrray given to the constructor of this class. Further, the ith entry of the aforementioned array corresponds to the variance of the simulation data stored at index \char`\"{}index\char`\"{} at time step t\_\-values\mbox{[}i\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_a8af920362a59782691c4710dcce1b83b}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!calculateVarianceValuesAll@{calculateVarianceValuesAll}}
+\index{calculateVarianceValuesAll@{calculateVarianceValuesAll}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{calculateVarianceValuesAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::calculateVarianceValuesAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_a8af920362a59782691c4710dcce1b83b}
+
+
+This method calculates the variance of each of the distributions encapsulated by this class at each time step in the simulation and returns the resulting values. 
+
+\begin{DoxyReturn}{Returns}
+This method returns a two dimensional array of size nxm, where n is equal to the data\_\-amount parameter given to the constructor of this class and m is equal to the size of the t\_\-values array given to the constructor of this class. Further, the \mbox{[}i,j\mbox{]}th entry of the returned array corrsponds to the variance of the ith distribution (in accordance with the addData method) at time step t\_\-values\mbox{[}j\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_ab439de520df4954c83acb1195a566756}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!clearData@{clearData}}
+\index{clearData@{clearData}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{clearData}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::clearData (
+\begin{DoxyParamCaption}
+\item[{}]{ self}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_ab439de520df4954c83acb1195a566756}
+
+
+This method removes all the data added to this object by using the addData method of this class. 
+
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_ad02c165755e21331ea2988166c12319c}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!getDistribution@{getDistribution}}
+\index{getDistribution@{getDistribution}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{getDistribution}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::getDistribution (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ index, }
+\item[{}]{ time\_\-index}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_ad02c165755e21331ea2988166c12319c}
+
+
+This method may be used to access a paticular distribution encapsulated by this class at a designated time step in the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]This parameter must be an integer which is $>$=0 and is strictly less than the data\_\-amount parameter given to the constructor of this class. This parameter corresponds to the index of the data set whose distribution values we wish to access (note: this index must be consistent with the index we used for adding data to this class by using the addData method of this class). \item[{\em time\_\-index}]This prameter must be an integer which is $>$=0 and is strictly less than the t\_\-values array given to the constructor of this class. This parameter dictates the index of the entry in the t\_\-values array for which we wish to retrieve the values of the specified distribtuion. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns an array of the same size as the r\_\-values array given to the constructor of this class. Further, the ith entry of this array corresponds to the value of our distribution N for r value: r\_\-values\mbox{[}i\mbox{]} at time: t\_\-values\mbox{[}time\_\-index\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_ae310e53613ab2830e7edaace7572fb7d}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!getDistributionAll@{getDistributionAll}}
+\index{getDistributionAll@{getDistributionAll}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{getDistributionAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::getDistributionAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ time\_\-index}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_ae310e53613ab2830e7edaace7572fb7d}
+
+
+This method may be used to access each of the distributions encapsulated by this class at a specified time step in the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em time\_\-index}]This prameter must be an integer which is $>$=0 and is strictly less than the t\_\-values array given to the constructor of this class. This parameter dictates the index of the entry in the t\_\-values array for which we wish to retrieve the values of the distributions encapsulated by this class. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns a two dimensional array of size nxm, where n is equal to the data\_\-amount parameter given to the constructor of this class and m is equal to the length of the r\_\-values array given to the constructor of this class. Further, the \mbox{[}i,j\mbox{]}th entry of this array corresponds to the value of the distribution with index i (in accordance with the addData method) for nanoparticle radius value r\_\-values\mbox{[}j\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_a28fad03c7b80716d1e978a9d807c6d87}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!getRValues@{getRValues}}
+\index{getRValues@{getRValues}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{getRValues}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::getRValues (
+\begin{DoxyParamCaption}
+\item[{}]{ self}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_a28fad03c7b80716d1e978a9d807c6d87}
+
+
+This method is used to access the r\_\-values array given to the constructor of this class. 
+
+\begin{DoxyReturn}{Returns}
+This method returns the r\_\-values array given to the constructor of this class. 
+\end{DoxyReturn}
+\hypertarget{class_distribution_data_processor_1_1_distribution_data_processor_a26729ea141c5ddcb97ab11026bf4cefd}{
+\index{DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}!getTValues@{getTValues}}
+\index{getTValues@{getTValues}!DistributionDataProcessor::DistributionDataProcessor@{DistributionDataProcessor::DistributionDataProcessor}}
+\subsubsection[{getTValues}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataProcessor::DistributionDataProcessor::getTValues (
+\begin{DoxyParamCaption}
+\item[{}]{ self}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_processor_1_1_distribution_data_processor_a26729ea141c5ddcb97ab11026bf4cefd}
+
+
+This method is used to access the t\_\-values array given to the constructor of this class. 
+
+\begin{DoxyReturn}{Returns}
+This method returns the t\_\-values array given to the constructor of this class. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Utilities/DistributionDataProcessor.py\end{DoxyCompactItemize}

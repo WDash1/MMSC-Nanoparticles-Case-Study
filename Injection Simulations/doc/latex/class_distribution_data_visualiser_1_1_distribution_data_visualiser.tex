@@ -1,0 +1,324 @@
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser}{
+\section{DistributionDataVisualiser::DistributionDataVisualiser Class Reference}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser}\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+}
+
+
+This class provides utilities designed to assist in the production of graphs from the data produced by numerical simulations of the nanoparticle PDE model.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_adef16beac816563cca4db0c2a8deef73}{\_\-\_\-init\_\-\_\-}
+\begin{DoxyCompactList}\small\item\em The constructor for this class. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_afd5e7b189ddc9d35884acc9ea8f62b10}{exportMeanTimeGraph}
+\begin{DoxyCompactList}\small\item\em This method generates a graph comprised of the mean values of each distribution given to the constructor of this class at each time step in the simulation. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_a7ce1b532faa77577fdafb8512943c922}{exportVarianceTimeGraph}
+\begin{DoxyCompactList}\small\item\em This method generates a graph comprised of the variance values of each distribution given to the constructor of this class at each time step in the simulation. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aa43de9f8adeeacc13306f1fbe67cee1b}{exportMomentTimeGraph}
+\begin{DoxyCompactList}\small\item\em This method generates a graph comprised of the values of a specified moment of each distribution given to the constructor of this class at each time step in the simulation. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_af94d7669b055348a4c702ea452e7bec7}{exportDistributionGraph}
+\begin{DoxyCompactList}\small\item\em This method generates a two dimensional line graph of the distributions given to the constructor of this class at a particular time step. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ab3c06a75bb9d6eaf77e9b81677473079}{exportDistributionGraphAll}
+\begin{DoxyCompactList}\small\item\em This method generates a series of 2D line graphs of each of the distributions given to the constructor of this class at each time step in the simulation. \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aefcaed410fa6dee06d7b44a5955b0265}{exportCustomGraph}
+\begin{DoxyCompactList}\small\item\em This method generates a graph comprised of applying a given function to each distribution given to the constructor of this class at a specified time step, plotted against a custom set of x-\/values (with one for each distribution). \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_acd9f1f9928b666a97c002a6c3afb4550}{exportCustomMeanGraphAll}
+\begin{DoxyCompactList}\small\item\em This method generates a series of graphs (one for each time step in the simulation) comprised of the average value of each distribution given to the constructor of this class, plotted against a custom set of x-\/values (with one for each distribution). \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_a1e6dc3d3ece767ef7898c5832b67093d}{exportCustomVarianceGraphAll}
+\begin{DoxyCompactList}\small\item\em This method generates a series of graphs (one for each time step in the simulation) comprised of the variance of each distribution given to the constructor of this class, plotted against a custom set of x-\/values (with one for each distribution). \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aa5bce911364f691982e3c487636b0068}{exportCustomMomentGraphAll}
+\begin{DoxyCompactList}\small\item\em This method generates a series of graphs (one for each time step in the simulation) comprised of a specified moment of each distribution given to the constructor of this class, plotted against a custom set of x-\/values (with one for each distribution). \item\end{DoxyCompactList}\item 
+def \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ad6e78a55430f4f39b30ff1867c8f1631}{exportCustomGraphAll}
+\begin{DoxyCompactList}\small\item\em This method generates a series of graphs (one for each time step in the simulation) comprised of a applying given function to each distribution given to the constructor of this class, plotted against a custom set of x-\/values (with one for each distribution). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides utilities designed to assist in the production of graphs from the data produced by numerical simulations of the nanoparticle PDE model. In order to encapsulate the raw data from simulations into a suitable form, please see the \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor}{DistributionDataProcessor::DistributionDataProcessor} class. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_adef16beac816563cca4db0c2a8deef73}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}}
+\index{\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{\_\-\_\-init\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::\_\-\_\-init\_\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ x\_\-label, }
+\item[{}]{ y\_\-label, }
+\item[{}]{ key\_\-strings, }
+\item[{}]{ line\_\-colours, }
+\item[{}]{ line\_\-styles, }
+\item[{}]{ label\_\-font\_\-size, }
+\item[{}]{ title\_\-font\_\-size, }
+\item[{}]{ data\_\-processor}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_adef16beac816563cca4db0c2a8deef73}
+
+
+The constructor for this class. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x\_\-label}]This parameter must be a string and dictates the labels that will be used on the horizontal axis of all graphs produced by the \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_af94d7669b055348a4c702ea452e7bec7}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraph} and \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ab3c06a75bb9d6eaf77e9b81677473079}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraphAll} methods of this class. \item[{\em y\_\-label}]This parameter must be a string and dictates the labels that will be used on the vertical axis of all graphs produced by the \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_af94d7669b055348a4c702ea452e7bec7}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraph} and \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ab3c06a75bb9d6eaf77e9b81677473079}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraphAll} methods of this class. \item[{\em key\_\-strings}]This parameter should be an array of strings that dictate the descriptions shown for each data set, in the legend of the graphs generated by the \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_af94d7669b055348a4c702ea452e7bec7}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraph}, \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ab3c06a75bb9d6eaf77e9b81677473079}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraphAll}, \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_afd5e7b189ddc9d35884acc9ea8f62b10}{DistributionDataVisualiser::DistributionDataVisualiser::exportMeanTimeGraph}, \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_a7ce1b532faa77577fdafb8512943c922}{DistributionDataVisualiser::DistributionDataVisualiser::exportVarianceTimeGraph} and \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aa43de9f8adeeacc13306f1fbe67cee1b}{DistributionDataVisualiser::DistributionDataVisualiser::exportMomentTimeGraph} methods of this class. It is important to note that this array must be the same length as the \char`\"{}line\_\-colours\char`\"{} and \char`\"{}line\_\-styles\char`\"{} arrays. \item[{\em line\_\-colours}]This parameter should be an array of strings that dictate the colours to be used for each line in the graphs generated by the \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_af94d7669b055348a4c702ea452e7bec7}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraph}, \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ab3c06a75bb9d6eaf77e9b81677473079}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraphAll}, \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_afd5e7b189ddc9d35884acc9ea8f62b10}{DistributionDataVisualiser::DistributionDataVisualiser::exportMeanTimeGraph}, \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_a7ce1b532faa77577fdafb8512943c922}{DistributionDataVisualiser::DistributionDataVisualiser::exportVarianceTimeGraph} and \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aa43de9f8adeeacc13306f1fbe67cee1b}{DistributionDataVisualiser::DistributionDataVisualiser::exportMomentTimeGraph} mehods of this class. (e.g. this parameter may be set to \mbox{[}\char`\"{}red\char`\"{}, \char`\"{}green\char`\"{}, \char`\"{}blue\char`\"{}, \char`\"{}yellow\char`\"{}, \char`\"{}purple\char`\"{}, \char`\"{}orange\char`\"{}\mbox{]}). It is important to note that this array must be the same length as the \char`\"{}line\_\-colours\char`\"{} and \char`\"{}line\_\-styles\char`\"{} arrays. \item[{\em line\_\-styles}]This parameter should be an array of strings that dictate the style (e.g. dotted, dashed or solid) to be used for each line in the graphs generated by the \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_af94d7669b055348a4c702ea452e7bec7}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraph}, \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ab3c06a75bb9d6eaf77e9b81677473079}{DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraphAll}, \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_afd5e7b189ddc9d35884acc9ea8f62b10}{DistributionDataVisualiser::DistributionDataVisualiser::exportMeanTimeGraph}, \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_a7ce1b532faa77577fdafb8512943c922}{DistributionDataVisualiser::DistributionDataVisualiser::exportVarianceTimeGraph} and \hyperlink{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aa43de9f8adeeacc13306f1fbe67cee1b}{DistributionDataVisualiser::DistributionDataVisualiser::exportMomentTimeGraph} mehods of this class. (e.g. this parameter may be set to \mbox{[}\char`\"{}-\/\char`\"{}, \char`\"{}:\char`\"{}, \char`\"{}-\/-\/\char`\"{}, \char`\"{}-\/.\char`\"{}\mbox{]}). Please see \href{https://matplotlib.org/gallery/lines_bars_and_markers/line_styles_reference.html}{\tt https://matplotlib.org/gallery/lines\_\-bars\_\-and\_\-markers/line\_\-styles\_\-reference.html} for more details. It is important to note that this array must be the same length as the \char`\"{}line\_\-colours\char`\"{} and \char`\"{}line\_\-styles\char`\"{} arrays. \item[{\em label\_\-font\_\-size}]This parameter must be an integer which is $>$0 and is used to specify the size of the font to be used for the axis and legend labels in all the graphs produced by this class. \item[{\em title\_\-font\_\-size}]This parameter must be an integer which is $>$0 and is used to specify the size of the font to be used for the title in all the graphs produced by this class. \item[{\em data\_\-processor}]This parameter must be a valid instance of an object of type \hyperlink{class_distribution_data_processor_1_1_distribution_data_processor}{DistributionDataProcessor::DistributionDataProcessor}, which encapsulates all simulation data that we wish to visualise. \end{DoxyParams}
+\begin{DoxyNote}{Note}
+It is important to note that if any of the parameters provided are invalid, then this method will raise an excpetion. 
+\end{DoxyNote}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aefcaed410fa6dee06d7b44a5955b0265}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportCustomGraph@{exportCustomGraph}}
+\index{exportCustomGraph@{exportCustomGraph}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportCustomGraph}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportCustomGraph (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ func, }
+\item[{}]{ line\_\-style, }
+\item[{}]{ figure\_\-num, }
+\item[{}]{ x\_\-values, }
+\item[{}]{ figure\_\-title, }
+\item[{}]{ x\_\-axis\_\-label, }
+\item[{}]{ y\_\-axis\_\-label, }
+\item[{}]{ output\_\-filepath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim, }
+\item[{}]{ time\_\-index}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aefcaed410fa6dee06d7b44a5955b0265}
+
+
+This method generates a graph comprised of applying a given function to each distribution given to the constructor of this class at a specified time step, plotted against a custom set of x-\/values (with one for each distribution). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em func}]This parameter must be a valid function handle that takes 2 vectors of type double (the probability values of a distribution and the event values of of a distribution respectively) and returns a value of type double. This parameter dictates the function that we wish to apply to each of distributions given to the constructor of this class. \item[{\em line\_\-style}]This parameter should be a non-\/empty string that the style to be used for the line on each of the graphs produced by this method. \item[{\em figure\_\-num}]This parameter must be an integer which is $>$0 that dictates the figure number assigned to the graph produced by this method. \item[{\em x\_\-values}]This must be an array of type double that is the same length as the key\_\-strings array given to the constructor of this class. This array dictates the x-\/values to be used for each of the different distribution values in the graphs produced by this method. \item[{\em figure\_\-title}]This parameter must be a string, which dictates the title that will be used in the graph produced by this method. \item[{\em x\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the x-\/axis of all the graphs produced by this method. \item[{\em y\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the y-\/axis of all the graphs produced by this method. \item[{\em output\_\-filepath}]This parameter must be a string which dictates either the relative or absolute path to which the graph produced by this method will be written to. It is important to note that if the file specified by this parameter already exists then it will be overwritten by this method. In addition, if the filepath specified by this parameter cannot be written to, then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graphs produced by this method use a logarithmic scale. If this parameter is set to True, then the resulting graphs will use a semilog scale and otherwise they will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graphs produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em time\_\-index}]This parameter must be an integer which is $>$=0 and dictates which time step in the simulation data given to the constructor of this class, that we wish to produce a graph for. \end{DoxyParams}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ad6e78a55430f4f39b30ff1867c8f1631}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportCustomGraphAll@{exportCustomGraphAll}}
+\index{exportCustomGraphAll@{exportCustomGraphAll}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportCustomGraphAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportCustomGraphAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ func, }
+\item[{}]{ line\_\-style, }
+\item[{}]{ x\_\-values, }
+\item[{}]{ x\_\-axis\_\-label, }
+\item[{}]{ y\_\-axis\_\-label, }
+\item[{}]{ output\_\-folderpath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ad6e78a55430f4f39b30ff1867c8f1631}
+
+
+This method generates a series of graphs (one for each time step in the simulation) comprised of a applying given function to each distribution given to the constructor of this class, plotted against a custom set of x-\/values (with one for each distribution). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em func}]This parameter must be a valid function handle that takes 2 vectors of type double (the probability values of a distribution and the event values of of a distribution respectively) and returns a value of type double. This parameter dictates the function that we wish to apply to each of distributions given to the constructor of this class. \item[{\em line\_\-style}]This parameter should be a non-\/empty string that the style to be used for the line on each of the graphs produced by this method. \item[{\em x\_\-values}]This must be an array of type double that is the same length as the key\_\-strings array given to the constructor of this class. This array dictates the x-\/values to be used for each of the different distribution values in the graphs produced by this method. \item[{\em x\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the x-\/axis of all the graphs produced by this method. \item[{\em y\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the y-\/axis of all the graphs produced by this method. \item[{\em output\_\-folderpath}]This parameter must be a string, which specifies a valid directory (either absolute or relative) on the local filesystem. This parameter dictates the folder to which all graphs produced by this method will be written to. It is important to note that if the specified directory does not exist or cannot be written to, then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graphs produced by this method use a logarithmic scale. If this parameter is set to True, then the resulting graphs will use a semilog scale and otherwise they will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graphs produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \end{DoxyParams}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_acd9f1f9928b666a97c002a6c3afb4550}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportCustomMeanGraphAll@{exportCustomMeanGraphAll}}
+\index{exportCustomMeanGraphAll@{exportCustomMeanGraphAll}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportCustomMeanGraphAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportCustomMeanGraphAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ line\_\-style, }
+\item[{}]{ x\_\-values, }
+\item[{}]{ x\_\-axis\_\-label, }
+\item[{}]{ y\_\-axis\_\-label, }
+\item[{}]{ output\_\-folderpath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_acd9f1f9928b666a97c002a6c3afb4550}
+
+
+This method generates a series of graphs (one for each time step in the simulation) comprised of the average value of each distribution given to the constructor of this class, plotted against a custom set of x-\/values (with one for each distribution). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em line\_\-style}]This parameter should be a non-\/empty string that the style to be used for the line on each of the graphs produced by this method. \item[{\em x\_\-values}]This must be an array of type double that is the same length as the key\_\-strings array given to the constructor of this class. This array dictates the x-\/values to be used for each of the different distribution means in the graphs produced by this method. \item[{\em x\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the x-\/axis of all the graphs produced by this method. \item[{\em y\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the y-\/axis of all the graphs produced by this method. \item[{\em output\_\-folderpath}]This parameter must be a string, which specifies a valid directory (either absolute or relative) on the local filesystem. This parameter dictates the folder to which all graphs produced by this method will be written to. It is important to note that if the specified directory does not exist or cannot be written to, then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graphs produced by this method use a logarithmic scale. If this parameter is set to True, then the resulting graphs will use a semilog scale and otherwise they will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graphs produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \end{DoxyParams}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aa5bce911364f691982e3c487636b0068}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportCustomMomentGraphAll@{exportCustomMomentGraphAll}}
+\index{exportCustomMomentGraphAll@{exportCustomMomentGraphAll}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportCustomMomentGraphAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportCustomMomentGraphAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ moment\_\-number, }
+\item[{}]{ line\_\-style, }
+\item[{}]{ x\_\-values, }
+\item[{}]{ x\_\-axis\_\-label, }
+\item[{}]{ y\_\-axis\_\-label, }
+\item[{}]{ output\_\-folderpath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aa5bce911364f691982e3c487636b0068}
+
+
+This method generates a series of graphs (one for each time step in the simulation) comprised of a specified moment of each distribution given to the constructor of this class, plotted against a custom set of x-\/values (with one for each distribution). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em moment\_\-number}]This parameter must be an integer which is $>$0 and dictates the moment of the distributions given to the constructor of this class that we wish to plot. \item[{\em line\_\-style}]This parameter should be a non-\/empty string that the style to be used for the line on each of the graphs produced by this method. \item[{\em x\_\-values}]This must be an array of type double that is the same length as the key\_\-strings array given to the constructor of this class. This array dictates the x-\/values to be used for each of the different distribution moments in the graphs produced by this method. \item[{\em x\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the x-\/axis of all the graphs produced by this method. \item[{\em y\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the y-\/axis of all the graphs produced by this method. \item[{\em output\_\-folderpath}]This parameter must be a string, which specifies a valid directory (either absolute or relative) on the local filesystem. This parameter dictates the folder to which all graphs produced by this method will be written to. It is important to note that if the specified directory does not exist or cannot be written to, then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graphs produced by this method use a logarithmic scale. If this parameter is set to True, then the resulting graphs will use a semilog scale and otherwise they will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graphs produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \end{DoxyParams}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_a1e6dc3d3ece767ef7898c5832b67093d}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportCustomVarianceGraphAll@{exportCustomVarianceGraphAll}}
+\index{exportCustomVarianceGraphAll@{exportCustomVarianceGraphAll}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportCustomVarianceGraphAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportCustomVarianceGraphAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ line\_\-style, }
+\item[{}]{ x\_\-values, }
+\item[{}]{ x\_\-axis\_\-label, }
+\item[{}]{ y\_\-axis\_\-label, }
+\item[{}]{ output\_\-folderpath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_a1e6dc3d3ece767ef7898c5832b67093d}
+
+
+This method generates a series of graphs (one for each time step in the simulation) comprised of the variance of each distribution given to the constructor of this class, plotted against a custom set of x-\/values (with one for each distribution). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em line\_\-style}]This parameter should be a non-\/empty string that the style to be used for the line on each of the graphs produced by this method. \item[{\em x\_\-values}]This must be an array of type double that is the same length as the key\_\-strings array given to the constructor of this class. This array dictates the x-\/values to be used for each of the different distribution variances in the graphs produced by this method. \item[{\em x\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the x-\/axis of all the graphs produced by this method. \item[{\em y\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be used on the y-\/axis of all the graphs produced by this method. \item[{\em output\_\-folderpath}]This parameter must be a string, which specifies a valid directory (either absolute or relative) on the local filesystem. This parameter dictates the folder to which all graphs produced by this method will be written to. It is important to note that if the specified directory does not exist or cannot be written to, then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graphs produced by this method use a logarithmic scale. If this parameter is set to True, then the resulting graphs will use a semilog scale and otherwise they will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graphs produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \end{DoxyParams}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_af94d7669b055348a4c702ea452e7bec7}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportDistributionGraph@{exportDistributionGraph}}
+\index{exportDistributionGraph@{exportDistributionGraph}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportDistributionGraph}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraph (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ time\_\-index, }
+\item[{}]{ figure\_\-num, }
+\item[{}]{ figure\_\-title, }
+\item[{}]{ output\_\-filepath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_af94d7669b055348a4c702ea452e7bec7}
+
+
+This method generates a two dimensional line graph of the distributions given to the constructor of this class at a particular time step. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em time\_\-index}]This parameter must be an integer which is $>$=0 and is stictly less that the total number of timesteps used in the simulation data given to the constructor of this class. This parameter dictates the time-\/step of the simulation data, for which we wish to produce a graph of distributions given to the constructor given to this class. \item[{\em figure\_\-num}]This parameter should be an integer which is $>$=0 and corresponds to the figure number that will be assigned to the graph that will be produced by this method. \item[{\em figure\_\-title}]This parameter must be a string, which dictates the title that will be show on the graph produced by this method. \item[{\em output\_\-filepath}]This parameter must be a string which dictates either the relative or absolute path to which the graph produced by this method will be written to. It is important to note that if the file specified by this parameter already exists then it will be overwritten by this method. In addition, if the filepath specified by this parameter cannot be written to then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graph produced by this method uses a logarithmic scale. If this parameter is set to True, then the resulting graph will be use a semilog scale and otherwise it will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graph produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \end{DoxyParams}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ab3c06a75bb9d6eaf77e9b81677473079}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportDistributionGraphAll@{exportDistributionGraphAll}}
+\index{exportDistributionGraphAll@{exportDistributionGraphAll}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportDistributionGraphAll}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportDistributionGraphAll (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ output\_\-folderpath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_ab3c06a75bb9d6eaf77e9b81677473079}
+
+
+This method generates a series of 2D line graphs of each of the distributions given to the constructor of this class at each time step in the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em output\_\-folderpath}]This parameter must be a string, which specifies a valid directory (either absolute or relative) on the local filesystem. This parameter dictates the folder to which all graphs produced by this method will be written to. It is important to note that if the specified directory does not exist or cannot be written to, then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graphs produced by this method use a logarithmic scale. If this parameter is set to True, then the resulting graphs will use a semilog scale and otherwise they will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graphs produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \end{DoxyParams}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_afd5e7b189ddc9d35884acc9ea8f62b10}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportMeanTimeGraph@{exportMeanTimeGraph}}
+\index{exportMeanTimeGraph@{exportMeanTimeGraph}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportMeanTimeGraph}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportMeanTimeGraph (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ figure\_\-num, }
+\item[{}]{ figure\_\-title, }
+\item[{}]{ x\_\-axis\_\-label, }
+\item[{}]{ y\_\-axis\_\-label, }
+\item[{}]{ output\_\-filepath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_afd5e7b189ddc9d35884acc9ea8f62b10}
+
+
+This method generates a graph comprised of the mean values of each distribution given to the constructor of this class at each time step in the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em figure\_\-num}]This parameter should be an integer which is $>$=0 and corresponds to the figure number that will be assigned to the graph that will be produced by this method. \item[{\em figure\_\-title}]This parameter must be a string, which dictates the title that will be show on the graph produced by this method. \item[{\em x\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be shown on the horizonatal axis of the graph produced by this method. \item[{\em y\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be shown on the vertical axis of the graph produced by this method. \item[{\em output\_\-filepath}]This parameter must be a string which dictates either the relative or absolute path to which the graph produced by this method will be written to. It is important to note that if the file specified by this parameter already exists then it will be overwritten by this method. In addition, if the filepath specified by this parameter cannot be written to then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graph produced by this method uses a logarithmic scale. If this parameter is set to True, then the resulting graph will be use a semilog scale and otherwise it will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graph produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \end{DoxyParams}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aa43de9f8adeeacc13306f1fbe67cee1b}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportMomentTimeGraph@{exportMomentTimeGraph}}
+\index{exportMomentTimeGraph@{exportMomentTimeGraph}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportMomentTimeGraph}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportMomentTimeGraph (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ moment\_\-number, }
+\item[{}]{ figure\_\-num, }
+\item[{}]{ figure\_\-title, }
+\item[{}]{ x\_\-axis\_\-label, }
+\item[{}]{ y\_\-axis\_\-label, }
+\item[{}]{ output\_\-filepath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_aa43de9f8adeeacc13306f1fbe67cee1b}
+
+
+This method generates a graph comprised of the values of a specified moment of each distribution given to the constructor of this class at each time step in the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em moment\_\-number}]This parameter must be an integer which is strictly greater than zero, which corresponds to the moment number that we wish to produce a time graph of. \item[{\em figure\_\-num}]This parameter should be an integer which is $>$=0 and corresponds to the figure number that will be assigned to the graph that will be produced by this method. \item[{\em figure\_\-title}]This parameter must be a string, which dictates the title that will be show on the graph produced by this method. \item[{\em x\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be shown on the horizontal axis of the graph produced by this method. \item[{\em y\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be shown on the vertical axis of the graph produced by this method. \item[{\em output\_\-filepath}]This parameter must be a string which dictates either the relative or absolute path to which the graph produced by this method will be written to. It is important to note that if the file specified by this parameter already exists then it will be overwritten by this method. In addition, if the filepath specified by this parameter cannot be written to then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graph produced by this method uses a logarithmic scale. If this parameter is set to True, then the resulting graph will be use a semilog scale and otherwise it will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graph produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \end{DoxyParams}
+\hypertarget{class_distribution_data_visualiser_1_1_distribution_data_visualiser_a7ce1b532faa77577fdafb8512943c922}{
+\index{DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}!exportVarianceTimeGraph@{exportVarianceTimeGraph}}
+\index{exportVarianceTimeGraph@{exportVarianceTimeGraph}!DistributionDataVisualiser::DistributionDataVisualiser@{DistributionDataVisualiser::DistributionDataVisualiser}}
+\subsubsection[{exportVarianceTimeGraph}]{\setlength{\rightskip}{0pt plus 5cm}def DistributionDataVisualiser::DistributionDataVisualiser::exportVarianceTimeGraph (
+\begin{DoxyParamCaption}
+\item[{}]{ self, }
+\item[{}]{ figure\_\-num, }
+\item[{}]{ figure\_\-title, }
+\item[{}]{ x\_\-axis\_\-label, }
+\item[{}]{ y\_\-axis\_\-label, }
+\item[{}]{ output\_\-filepath, }
+\item[{}]{ use\_\-log\_\-scale, }
+\item[{}]{ auto\_\-scale, }
+\item[{}]{ y\_\-lower\_\-lim, }
+\item[{}]{ y\_\-upper\_\-lim}
+\end{DoxyParamCaption}
+)}}
+\label{class_distribution_data_visualiser_1_1_distribution_data_visualiser_a7ce1b532faa77577fdafb8512943c922}
+
+
+This method generates a graph comprised of the variance values of each distribution given to the constructor of this class at each time step in the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em figure\_\-num}]This parameter should be an integer which is $>$=0 and corresponds to the figure number that will be assigned to the graph that will be produced by this method. \item[{\em figure\_\-title}]This parameter must be a string, which dictates the title that will be show on the graph produced by this method. \item[{\em x\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be shown on the horizonatal axis of the graph produced by this method. \item[{\em y\_\-axis\_\-label}]This parameter must be a string, which dictates the label that will be shown on the vertical axis of the graph produced by this method. \item[{\em output\_\-filepath}]This parameter must be a string which dictates either the relative or absolute path to which the graph produced by this method will be written to. It is important to note that if the file specified by this parameter already exists then it will be overwritten by this method. In addition, if the filepath specified by this parameter cannot be written to then this method will raise an exception. \item[{\em use\_\-log\_\-scale}]This parameter must be a boolean that dictates whether the graph produced by this method uses a logarithmic scale. If this parameter is set to True, then the resulting graph will be use a semilog scale and otherwise it will use a standard linear scale. \item[{\em auto\_\-scale}]This parameter must be a boolean that dictates whether the scale on the y-\/axis of the graph produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-\/axis scale and otherwise it will be set in accordance with the y\_\-lower\_\-lim and y\_\-upper\_\-lim parameters given to this method. \item[{\em y\_\-lower\_\-lim}]This parameter must be a number of type double which is strictly less than the parameter y\_\-upper\_\-lim. This value dictates the lower end of the y-\/axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \item[{\em y\_\-upper\_\-lim}]This parameter must be a number of type double which is stictly greater than the parameter y\_\-lower\_\-lim. This value dictates the upper end of the y-\/axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto\_\-scale parameter is set to False. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Utilities/DistributionDataVisualiser.py\end{DoxyCompactItemize}
