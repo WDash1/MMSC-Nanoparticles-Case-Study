@@ -49,7 +49,7 @@ number_of_functions = 6;
 
 
 #The directory that we wish to write the resulting graph images to.
-output_folder = "Raw_Images/";
+output_folder = "Distribution_Plots/";
 
 
 #A general step function that we will use to rapidly sharply inject solute
@@ -131,14 +131,15 @@ data_visualiser = DistributionDataVisualiser("r (in nm)", "N(r,t)",
                                              
 #Generate a graph of how the mean of the distribution evolves with time.
 data_visualiser.exportMeanTimeGraph(1, "", "t (in hours)", "Average r (in nm)", 
-                                    "./Stats/mean_graph.png", True,
+                                    "./Statistics/mean_graph.png", True,
                                     True, 0, 0);
 
 #Generate a graph of how the variance of the distirbution evolves with time.
 data_visualiser.exportVarianceTimeGraph(2, "", "t (in hours)", 
                                         "Variance of r (in nm$^2$)",
-                                        "./Stats/variance_graph.png", True,
+                                        "./Statistics/variance_graph.png", True,
                                         True, 0, 0);
 
 #Generate graphs of the distribution at each time step in the simulation.                                        
-data_visualiser.exportDistributionGraphAll(output_folder, False, True, 0, 0);	 
+data_visualiser.exportDistributionGraphAll(output_folder, False, False, 0, 9,
+                                           True, 0, 0);	 
