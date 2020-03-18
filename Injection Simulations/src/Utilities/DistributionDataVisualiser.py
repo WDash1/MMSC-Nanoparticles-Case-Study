@@ -86,14 +86,14 @@ class DistributionDataVisualiser:
     #                           DistributionDataProcessor::DistributionDataProcessor,
     #                           which encapsulates all simulation data that
     #                           we wish to visualise.
-    # @note     It is important to note that if any of the parameters provided
+    #  @note    It is important to note that if any of the parameters provided
     #           are invalid, then this method will raise an excpetion.
     def __init__(self, x_label, y_label, 
                  key_strings, line_colours, line_styles,
                  label_font_size,
                  title_font_size,
                  data_processor):
-
+   
 
         self.__key_strings = key_strings;
         
@@ -485,7 +485,32 @@ class DistributionDataVisualiser:
     #                           to True, then the resulting graph will be use
     #                           a semilog scale and otherwise it will use a
     #                           standard linear scale.
-    #   @param auto_scale       This parameter must be a boolean that dictates
+    #   @param x_auto_scale     This parameter must be a boolean that dictates
+    #                           whether the scale on the x-axis of the graph
+    #                           produced by this method is chosen dymaically
+    #                           or specified manually. If this parameter is set
+    #                           to True, then this method will automatically
+    #                           choose the x-axis scale and otherwise
+    #                           it will be set in accordance with the 
+    #                           x_lower_lim and x_upper_lim parameters given
+    #                           to this method.
+    #   @param x_lower_lim      This parameter must be a number of type double
+    #                           which is strictly less than the parameter
+    #                           x_upper_lim. This value dictates the lower end
+    #                           of the x-axis scale that will be used on the
+    #                           graph produced by this method. It is important
+    #                           to note that this parameter is only used by
+    #                           this method when the x_auto_scale parameter is
+    #                           set to False.
+    #   @param x_upper_lim      This parameter must be a number of type double
+    #                           which is stictly greater than the parameter
+    #                           x_lower_lim. This value dictates the upper end
+    #                           of the x-axis scale that will be used on the
+    #                           graph produced by this method. It is important
+    #                           to note that this parameter is only used by
+    #                           this method when the x_auto_scale parameter is
+    #                           set to False.
+    #   @param y_auto_scale     This parameter must be a boolean that dictates
     #                           whether the scale on the y-axis of the graph
     #                           produced by this method is chosen dymaically
     #                           or specified manually. If this parameter is set
@@ -500,7 +525,7 @@ class DistributionDataVisualiser:
     #                           of the y-axis scale that will be used on the
     #                           graph produced by this method. It is important
     #                           to note that this parameter is only used by
-    #                           this method when the auto_scale parameter is
+    #                           this method when the y_auto_scale parameter is
     #                           set to False.
     #   @param y_upper_lim      This parameter must be a number of type double
     #                           which is stictly greater than the parameter
@@ -508,11 +533,12 @@ class DistributionDataVisualiser:
     #                           of the y-axis scale that will be used on the
     #                           graph produced by this method. It is important
     #                           to note that this parameter is only used by
-    #                           this method when the auto_scale parameter is
+    #                           this method when the y_auto_scale parameter is
     #                           set to False.
     def exportDistributionGraph(self, time_index, figure_num, figure_title,  
-                                output_filepath, use_log_scale, auto_scale, 
-                                y_lower_lim, y_upper_lim):
+                                output_filepath, use_log_scale, x_auto_scale,
+                                x_lower_lim, x_upper_lim,
+                                y_auto_scale, y_lower_lim, y_upper_lim):
         pylab.figure(figure_num);
         pylab.title(figure_title, fontsize=self.__title_font_size);
         pylab.xlabel(self.__default_x_label, fontsize=self.__label_font_size);
@@ -528,8 +554,12 @@ class DistributionDataVisualiser:
         max_distribution_value = max(
                 list(map(lambda x: max(x), distribution_values)));
 
-        pylab.xlim(min(self.__r_values), max(self.__r_values));
-        if(auto_scale):
+        if(x_auto_scale):
+            pylab.xlim(min(self.__r_values), max(self.__r_values));
+        else:
+            pylab.xlim(x_lower_lim, x_upper_lim);
+            
+        if(y_auto_scale):
             pylab.ylim(min_distribution_value*0.9, max_distribution_value*1.1);
         else:
             pylab.ylim(y_lower_lim, y_upper_lim);
@@ -572,36 +602,60 @@ class DistributionDataVisualiser:
     #                               resulting graphs will use a semilog scale
     #                               and otherwise they will use a standard
     #                               linear scale.
-    #   @param auto_scale           This parameter must be a boolean that
-    #                               dictates whether the scale on the y-axis 
-    #                               of the graphs produced by this method is
-    #                               chosen dymaically or specified manually.
-    #                               If this parameter is set to True, then 
-    #                               this method will automatically choose the
-    #                               y-axis scale and otherwise it will be set
-    #                               in accordance with the y_lower_lim and 
-    #                               y_upper_lim parameters given to this 
-    #                               method.
-    #   @param y_lower_lim          This parameter must be a number of type
-    #                               double which is strictly less than the
-    #                               parameter y_upper_lim. This value dictates
-    #                               the lower end of the y-axis scale that 
-    #                               will be used on the graphs produced by 
-    #                               this method. It is important to note that
-    #                               this parameter is only used by this method
-    #                               when the auto_scale parameter is set to 
-    #                               False.
-    #   @param y_upper_lim          This parameter must be a number of type 
-    #                               double which is stictly greater than the
-    #                               parameter y_lower_lim. This value dictates
-    #                               the upper end of the y-axis scale that will
-    #                               be used on the graphs produced by this 
-    #                               method. It is important to note that this
-    #                               parameter is only used by this method when 
-    #                               the auto_scale parameter is set to False.
+    #   @param x_auto_scale     This parameter must be a boolean that dictates
+    #                           whether the scale on the x-axis of the graph
+    #                           produced by this method is chosen dymaically
+    #                           or specified manually. If this parameter is set
+    #                           to True, then this method will automatically
+    #                           choose the x-axis scale and otherwise
+    #                           it will be set in accordance with the 
+    #                           x_lower_lim and x_upper_lim parameters given
+    #                           to this method.
+    #   @param x_lower_lim      This parameter must be a number of type double
+    #                           which is strictly less than the parameter
+    #                           x_upper_lim. This value dictates the lower end
+    #                           of the x-axis scale that will be used on the
+    #                           graph produced by this method. It is important
+    #                           to note that this parameter is only used by
+    #                           this method when the x_auto_scale parameter is
+    #                           set to False.
+    #   @param x_upper_lim      This parameter must be a number of type double
+    #                           which is stictly greater than the parameter
+    #                           x_lower_lim. This value dictates the upper end
+    #                           of the x-axis scale that will be used on the
+    #                           graph produced by this method. It is important
+    #                           to note that this parameter is only used by
+    #                           this method when the x_auto_scale parameter is
+    #                           set to False.
+    #   @param y_auto_scale     This parameter must be a boolean that dictates
+    #                           whether the scale on the y-axis of the graph
+    #                           produced by this method is chosen dymaically
+    #                           or specified manually. If this parameter is set
+    #                           to True, then this method will automatically
+    #                           choose the y-axis scale and otherwise
+    #                           it will be set in accordance with the 
+    #                           y_lower_lim and y_upper_lim parameters given
+    #                           to this method.
+    #   @param y_lower_lim      This parameter must be a number of type double
+    #                           which is strictly less than the parameter
+    #                           y_upper_lim. This value dictates the lower end
+    #                           of the y-axis scale that will be used on the
+    #                           graph produced by this method. It is important
+    #                           to note that this parameter is only used by
+    #                           this method when the y_auto_scale parameter is
+    #                           set to False.
+    #   @param y_upper_lim      This parameter must be a number of type double
+    #                           which is stictly greater than the parameter
+    #                           y_lower_lim. This value dictates the upper end
+    #                           of the y-axis scale that will be used on the
+    #                           graph produced by this method. It is important
+    #                           to note that this parameter is only used by
+    #                           this method when the y_auto_scale parameter is
+    #                           set to False.
     def exportDistributionGraphAll(self, output_folderpath, 
-                                   use_log_scale, auto_scale, y_lower_lim, 
-                                   y_upper_lim):
+                                   use_log_scale, x_auto_scale,
+                                   x_lower_lim, x_upper_lim,
+                                   y_auto_scale, y_lower_lim, y_upper_lim):
         
         max_n_value = 0;
         min_n_value = 0;
@@ -620,7 +674,7 @@ class DistributionDataVisualiser:
             if(current_max_distribution_value>max_n_value or i==0):
                 max_n_value = current_max_distribution_value;
             
-        if(auto_scale):
+        if(y_auto_scale):
             y_lower_lim = min_n_value;
             y_upper_lim = max_n_value+0.1*(max_n_value-min_n_value);
         
@@ -629,10 +683,12 @@ class DistributionDataVisualiser:
             
             filepath=output_folderpath+"/"+'/%04d'%i+".png";
             title = 'Time: %3.3f'%(current_time) + ' hours';
-
+            
             
             self.exportDistributionGraph(i, i, title, filepath, use_log_scale,
-                                         False, y_lower_lim, y_upper_lim);
+                                         x_auto_scale, x_lower_lim, 
+                                         x_upper_lim, False, y_lower_lim, 
+                                         y_upper_lim);
     
     ##  @brief                      This method generates a graph 
     #                               comprised of applying a given function to
