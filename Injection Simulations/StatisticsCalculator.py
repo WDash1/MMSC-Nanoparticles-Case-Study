@@ -1,3 +1,5 @@
+import numpy as NP
+
 ## @brief   This class provides a method for calculating the mean, variance
 #           and arbitrary moments of a given distribution function.
 class StatisticsCalculator:
@@ -7,7 +9,7 @@ class StatisticsCalculator:
     #                   the probability weights given to the
     #                   calculateMoment method of this class.
     def __init__(self, x_values):
-        self.x_values = x_values;
+        self.__x_values = x_values;
 
     ## @brief           This method normalises a given distribution function so
     #                   that its entries all sum to 1.
@@ -46,7 +48,8 @@ class StatisticsCalculator:
     #                           the provided probability distribution.
     def calculateMoment(self, p_values, moment_number):
         distribution_data = NP.array(p_values)*(1/sum(p_values));
-        moment_value = NP.dot(distribution_data, NP.power(self.r_values, moment_number));
+        moment_value = NP.dot(distribution_data, NP.power(self.__x_values, 
+                                                          moment_number));
         return moment_value;
 
     ## @brief                   This method calculates the mean of the 
