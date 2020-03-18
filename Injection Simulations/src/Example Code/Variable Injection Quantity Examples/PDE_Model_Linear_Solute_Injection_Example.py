@@ -146,7 +146,8 @@ data_visualiser.exportVarianceTimeGraph(2, "", "t (in hours)",
                                         True, True, 0, 0);
 
 #Generate graphs of the distribution at each time step in the simulation.                                        
-data_visualiser.exportDistributionGraphAll(output_folder, False, True, 0, 0);	
+data_visualiser.exportDistributionGraphAll(output_folder, False, False, 0, 8,
+                                           True, 0, 0);	
 
 
 #Generate graphs of the mean of each distribution at each time step in the
