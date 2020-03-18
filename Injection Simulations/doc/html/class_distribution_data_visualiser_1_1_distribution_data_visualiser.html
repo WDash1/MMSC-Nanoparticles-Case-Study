@@ -718,7 +718,25 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&nbsp;</td>
-          <td class="paramname"> <em>auto_scale</em>, </td>
+          <td class="paramname"> <em>x_auto_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>x_lower_lim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>x_upper_lim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>y_auto_scale</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -749,9 +767,12 @@ Public Member Functions</h2></td></tr>
     <tr><td valign="top"></td><td valign="top"><em>figure_title</em>&nbsp;</td><td>This parameter must be a string, which dictates the title that will be show on the graph produced by this method. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>output_filepath</em>&nbsp;</td><td>This parameter must be a string which dictates either the relative or absolute path to which the graph produced by this method will be written to. It is important to note that if the file specified by this parameter already exists then it will be overwritten by this method. In addition, if the filepath specified by this parameter cannot be written to then this method will raise an exception. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>use_log_scale</em>&nbsp;</td><td>This parameter must be a boolean that dictates whether the graph produced by this method uses a logarithmic scale. If this parameter is set to True, then the resulting graph will be use a semilog scale and otherwise it will use a standard linear scale. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>auto_scale</em>&nbsp;</td><td>This parameter must be a boolean that dictates whether the scale on the y-axis of the graph produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-axis scale and otherwise it will be set in accordance with the y_lower_lim and y_upper_lim parameters given to this method. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>y_lower_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is strictly less than the parameter y_upper_lim. This value dictates the lower end of the y-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto_scale parameter is set to False. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>y_upper_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is stictly greater than the parameter y_lower_lim. This value dictates the upper end of the y-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the auto_scale parameter is set to False. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x_auto_scale</em>&nbsp;</td><td>This parameter must be a boolean that dictates whether the scale on the x-axis of the graph produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the x-axis scale and otherwise it will be set in accordance with the x_lower_lim and x_upper_lim parameters given to this method. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x_lower_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is strictly less than the parameter x_upper_lim. This value dictates the lower end of the x-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the x_auto_scale parameter is set to False. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x_upper_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is stictly greater than the parameter x_lower_lim. This value dictates the upper end of the x-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the x_auto_scale parameter is set to False. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y_auto_scale</em>&nbsp;</td><td>This parameter must be a boolean that dictates whether the scale on the y-axis of the graph produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-axis scale and otherwise it will be set in accordance with the y_lower_lim and y_upper_lim parameters given to this method. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y_lower_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is strictly less than the parameter y_upper_lim. This value dictates the lower end of the y-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the y_auto_scale parameter is set to False. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y_upper_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is stictly greater than the parameter y_lower_lim. This value dictates the upper end of the y-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the y_auto_scale parameter is set to False. </td></tr>
   </table>
   </dd>
 </dl>
@@ -784,7 +805,25 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&nbsp;</td>
-          <td class="paramname"> <em>auto_scale</em>, </td>
+          <td class="paramname"> <em>x_auto_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>x_lower_lim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>x_upper_lim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>y_auto_scale</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -812,9 +851,12 @@ Public Member Functions</h2></td></tr>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>output_folderpath</em>&nbsp;</td><td>This parameter must be a string, which specifies a valid directory (either absolute or relative) on the local filesystem. This parameter dictates the folder to which all graphs produced by this method will be written to. It is important to note that if the specified directory does not exist or cannot be written to, then this method will raise an exception. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>use_log_scale</em>&nbsp;</td><td>This parameter must be a boolean that dictates whether the graphs produced by this method use a logarithmic scale. If this parameter is set to True, then the resulting graphs will use a semilog scale and otherwise they will use a standard linear scale. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>auto_scale</em>&nbsp;</td><td>This parameter must be a boolean that dictates whether the scale on the y-axis of the graphs produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-axis scale and otherwise it will be set in accordance with the y_lower_lim and y_upper_lim parameters given to this method. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>y_lower_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is strictly less than the parameter y_upper_lim. This value dictates the lower end of the y-axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto_scale parameter is set to False. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>y_upper_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is stictly greater than the parameter y_lower_lim. This value dictates the upper end of the y-axis scale that will be used on the graphs produced by this method. It is important to note that this parameter is only used by this method when the auto_scale parameter is set to False. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x_auto_scale</em>&nbsp;</td><td>This parameter must be a boolean that dictates whether the scale on the x-axis of the graph produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the x-axis scale and otherwise it will be set in accordance with the x_lower_lim and x_upper_lim parameters given to this method. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x_lower_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is strictly less than the parameter x_upper_lim. This value dictates the lower end of the x-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the x_auto_scale parameter is set to False. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x_upper_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is stictly greater than the parameter x_lower_lim. This value dictates the upper end of the x-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the x_auto_scale parameter is set to False. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y_auto_scale</em>&nbsp;</td><td>This parameter must be a boolean that dictates whether the scale on the y-axis of the graph produced by this method is chosen dymaically or specified manually. If this parameter is set to True, then this method will automatically choose the y-axis scale and otherwise it will be set in accordance with the y_lower_lim and y_upper_lim parameters given to this method. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y_lower_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is strictly less than the parameter y_upper_lim. This value dictates the lower end of the y-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the y_auto_scale parameter is set to False. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y_upper_lim</em>&nbsp;</td><td>This parameter must be a number of type double which is stictly greater than the parameter y_lower_lim. This value dictates the upper end of the y-axis scale that will be used on the graph produced by this method. It is important to note that this parameter is only used by this method when the y_auto_scale parameter is set to False. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1119,7 +1161,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Mar 18 2020 17:09:15 for Nanoparticles PDE Simulator by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Mar 18 2020 18:39:17 for Nanoparticles PDE Simulator by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
